@@ -7,11 +7,11 @@ Comment.init(
   {
     body: {
       type: DataTypes.STRING,
-      allowNull: false
-    }
+      allowNull: false,
+    },
   },
   {
-    sequelize
+    sequelize,
   }
 );
 
