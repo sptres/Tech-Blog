@@ -2,7 +2,7 @@ const path = require('path');
 const express = require('express');
 const session = require('express-session');
 const exphbs = require('express-handlebars');
-const data = require('./utils/date');
+const date = require('./utils/date');
 
 const app = express();
 const PORT = process.env.PORT || 3005;
@@ -34,9 +34,9 @@ app.set('view engine', 'handlebars');
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-app.use(express.static(path.json(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'public')));
 
-app.use(require('./controllers'));
+app.use(require('./controllers/'));
 
 app.listen(PORT, () => {
     console.log(`Listening on port ${PORT}!`);
