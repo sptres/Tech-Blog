@@ -16,6 +16,4 @@ const newPostHandler = async function (event) {
   document.location.replace('/dashboard');
 };
 
-document
-  .querySelector('#new-post-form')
-  .addEventListener('submit', newPostHandler);
+document.querySelector('#new-post').addEventListener('submit', newPostHandler);

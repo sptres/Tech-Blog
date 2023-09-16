@@ -1,0 +1,52 @@
+<div class='single-post'>
+  <article>
+    <div>
+      <h2>{{post.title}}</h2>
+      <div>
+        Posted by
+        {{post.User.username}}
+        on
+        {{format_date post.createdAt}}
+      </div>
+    </div>
+    <div>
+      {{post.body}}
+    </div>
+  </article>
+
+  {{#if post.Comments}}
+    <section>
+      <div>
+        <h3>Comments</h3>
+      </div>
+      <div>
+        {{#each post.Comments}}
+          <div>
+            <p>
+              {{body}}
+            </p>
+            <p>
+              {{User.username}},
+              {{format_date createdAt}}
+            </p>
+          </div>
+        {{/each}}
+      </div>
+    </section>
+  {{/if}}
+
+  <form id='new-comment'>
+    <div>
+      <h3>Add New Comment</h3>
+    </div>
+    <div>
+      <input type='hidden' name='post-id' value='{{post.id}}' />
+      <label class='form-label' for='comment-body'>Comment</label>
+      <textarea name='comment-body' class='form-input'></textarea>
+      <button type='submit' class='btn'>Submit</button>
+    </div>
+  </form>
+
+</div>
+
+<script src='/js/comment.js'></script>

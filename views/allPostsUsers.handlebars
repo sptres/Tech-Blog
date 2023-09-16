@@ -1,0 +1,10 @@
+<ul class='post-list'>
+  {{#each posts}}
+    <li class='post-item'>
+      <a href='/dashboard/edit/{{id}}' class='post-link'>
+        <span class='post-title'>{{title}}</span>
+        <span class='post-date'>{{format_date createdAt}}</span>
+      </a>
+    </li>
+  {{/each}}
+</ul>

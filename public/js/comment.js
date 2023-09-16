@@ -12,7 +12,7 @@ const commentHandler = async function (event) {
         body,
       }),
       headers: {
-        'Conent-Type': 'application/json',
+        'Content-Type': 'application/json',
       },
     });
 
@@ -21,5 +21,5 @@ const commentHandler = async function (event) {
 };
 
 document
-  .querySelector('#new-comment-form')
+  .querySelector('#new-comment')
   .addEventListener('submit', commentHandler);
