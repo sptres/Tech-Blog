@@ -7,10 +7,10 @@
   "description": "Tech Blog webpage where users can create edit and delete post and comments",
   "main": "index.js",
   "scripts": {
-    "scripts": {
-      "start": "node server.js",
-      "dev": "nodemon server.js"
-    }
+    "start": "node server.js",
+    "dev": "nodemon server.js",
+    "sequelize:migrate": "npx sequelize-cli db:migrate",
+    "sequelize:seed": "npx sequelize-cli db:seed:all"
   },
   "repository": {
     "type": "git",
@@ -34,5 +34,8 @@
   },
   "optionalDependencies": {
     "nodemon": "^2.0.12"
+  },
+  "devDependencies": {
+    "sequelize-cli": "^6.6.1"
   }
 }
